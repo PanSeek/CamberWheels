@@ -16,14 +16,13 @@ auto raw(unsigned __int32 address, const char* RawData, unsigned __int16 size) -
 	return;
 }
 
-class CMain {
-public:
-	CMain() {
+struct stMain {
+	stMain() {
 		fill(0x6AA6EE, 0x90, 0x6);
 		fill(0x6AA954, 20.f, 0x4);
 	};
-	~CMain() {
+	~stMain() {
 		raw(0x6AA6EE, "\x0F\x85\x9B\x03\x00\x00", 0x6);
 		raw(0x6AA954, "\x8C\x8B\x85\x00", 0x4);
 	};
-}; CMain plugin;
+} plugin;
